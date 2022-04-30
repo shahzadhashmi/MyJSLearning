@@ -37,4 +37,38 @@ so value2 will be = -Infinity
 let value1 = Math.max.apply(null, arr); // Expected Output: 11
 let value2 = Math.max.apply(arr, null); // Expected Output: -Infinity
 
-console.log(value1, value2);
+// console.log(value1, value2);
+
+/*Question # 3 */
+
+let user = { userName: "John Wick"};
+var anotherUser = user;
+user = null;
+
+//console.log(anotherUser); // Expected Output: "{userName: 'John wick' }"
+
+
+/*Question #4  */
+
+userId = 10;
+
+const newUser = {
+
+    userId: 81,
+    getUserId: function ()  {
+       return this.userId;
+    }
+
+};
+
+const id1= newUser.getUserId;
+const id2= newUser.getUserId.bind(newUser);
+
+// console.log(newUser.getUserId(), id1(), id2()); // Expected Output: 81 10 81
+
+
+const numbers = [35,2,4,11,7];
+numbers.sort(); // Expected Output: 35 -> because we are not providing compare function, so it will produce incorrect results
+console.log(numbers[2]);
+var sortedNumber = numbers.sort((a,b) =>{ return  a-b});
+console.log(sortedNumber[2]); // Expected Output: 7 now it'll compare two value and return correct result.
